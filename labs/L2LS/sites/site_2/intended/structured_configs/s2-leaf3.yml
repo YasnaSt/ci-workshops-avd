@@ -3,6 +3,15 @@ aaa_authorization:
     default: local
 aaa_root:
   disabled: true
+banners:
+  motd: 'You shall not pass. Unless you are authorized. Then you shall pass.
+
+    EOF
+
+
+    # Syslog
+
+    '
 config_end: true
 daemon_terminattr:
   cvaddrs:
@@ -80,6 +89,15 @@ local_users:
   sha512_password: $6$arista$Tq9B8k1A4iY4VZ1Bx41d1TXORDxmiqWgUjH.PhNMQ3IONQKLD//j4vEP7gg53ul0OjR3rhPF5Dx9g6ZJCumLx/
   ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDFj0fj79J+MBGlyUCpxsboFMB4FToc1j3vRi2dpFBp6gQB5s6vvubp8+hGprYbsCMBW5OYUs4EzRDXicVVLzC1Gyms3m2+coe+3QlGawsHLYnI/nzGfQ35E52M4k54EPoVOHSYodKDI38e8an5ZJ/dKXtmWBCsrBC7M+897IFOPgvct0eePY8WjyimEjDSKr3vOQ0qJifMmJOy4+DwZ9z9luG2ONqWCWLw2hO6hTv42dOn035/d4txfaI9SVrQs5N3HVm7QwP0UQMt1tjfHNPkwELY4mOUUKzs5F2nBBsADctP39bTGZiVnVfHQp7rNEnpEWf4q7i5YsS04zAla3Kb
     arista@melb-auto-workshop-2-2e419c35-eos
+logging:
+  vrfs:
+  - name: default
+    source_interface: Management0
+    hosts:
+    - name: 10.200.0.108
+      protocol: udp
+    - name: 10.200.1.108
+      protocol: udp
 management_api_http:
   enable_https: true
   enable_vrfs:
